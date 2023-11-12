@@ -1,6 +1,6 @@
 ﻿namespace Patisserie.Services.Catalog.Settings
 {
-    internal interface IDatabaseSettings
+    public interface IDatabaseSettings
     {
         //options pattern
         public string ProductCollectionName { get; set; }

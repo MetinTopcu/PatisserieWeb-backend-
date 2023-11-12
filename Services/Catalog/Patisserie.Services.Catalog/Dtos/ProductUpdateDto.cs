@@ -1,6 +1,6 @@
 ﻿namespace Patisserie.Services.Catalog.Dtos
 {
-    internal class ProductUpdateDto
+    public class ProductUpdateDto
     {
         public string Id { get; set; }
         public string Name { get; set; }

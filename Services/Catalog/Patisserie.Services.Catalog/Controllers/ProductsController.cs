@@ -9,15 +9,16 @@ namespace Patisserie.Services.Catalog.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    internal class ProductsController : CustomBaseController
+    public class ProductsController : CustomBaseController
     {
         private readonly IProductService _productService;
 
-        internal ProductsController(IProductService productService)
+        public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _productService.GetAllAsync();
@@ -34,6 +35,7 @@ namespace Patisserie.Services.Catalog.Controllers
             return CreateActionResultInstance(response);
         }
 
+        [HttpGet]
         [Route("/api/[controller]/GetAllByUserId/{userId}")]
         public async Task<IActionResult> GetAllByUserId(string userId)
         {

@@ -5,7 +5,7 @@ using System;
 
 namespace Patisserie.Services.Catalog.Dtos
 {
-    internal class ProductCreateDto
+    public class ProductCreateDto
     {
 
         public string Name { get; set; }

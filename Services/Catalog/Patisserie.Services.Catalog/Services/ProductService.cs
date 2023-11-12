@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Patisserie.Services.Catalog.Services
 {
-    internal class ProductService:IProductService
+    public class ProductService:IProductService
     {
         private readonly IMongoCollection<Product> _productCollection;
         private readonly IMongoCollection<Category> _categoryCollection;

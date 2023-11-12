@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patisserie.Services.Catalog.Services
 {
-    internal interface IProductService
+    public interface IProductService
     {
         Task<Response<List<ProductDto>>> GetAllAsync();
         Task<Response<ProductDto>> GetByIdAsync(string id);
