@@ -1,6 +1,6 @@
 ﻿namespace Patisserie.Services.Catalog.Settings
 {
-    public class DatabaseSettings : IDatabaseSettings
+    internal class DatabaseSettings : IDatabaseSettings
     {
         public string ProductCollectionName { get; set; }
         public string CategoryCollectionName { get; set; }
