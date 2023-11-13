@@ -5,6 +5,7 @@ using Patisserie.Services.Catalog.Models;
 using Patisserie.Services.Catalog.Settings;
 using Patisserie.Shared.Dtos;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Patisserie.Services.Catalog.Services
@@ -46,6 +47,7 @@ namespace Patisserie.Services.Catalog.Services
 
             if(category == null)
             {
+                
                 return Response<CategoryDto>.Fail("Category not found", 404);
             }
 

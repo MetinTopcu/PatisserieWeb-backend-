@@ -42,11 +42,11 @@ namespace Patisserie.Shared.Dtos
 
         public static Response<T> Fail(string error, int statusCode)
         {
-            return new Response<T>
-            {
-                Errors = new List<string>() { error },
+            return new Response<T> 
+            { 
+                Errors = new List<string>() { error }, 
                 StatusCode = statusCode,
-                IsSuccessful = false
+                IsSuccessful = false 
             };
         }
 
