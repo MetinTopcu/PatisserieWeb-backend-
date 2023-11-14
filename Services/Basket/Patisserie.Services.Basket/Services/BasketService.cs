@@ -1,24 +1,43 @@
 ﻿using Patisserie.Services.Basket.Dtos;
 using Patisserie.Shared.Dtos;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Patisserie.Services.Basket.Services
 {
     public class BasketService : IBasketService
     {
-        public Task<Response<bool>> Delete(string userId)
+        private readonly RedisService _redisService;
+
+        public BasketService(RedisService redisService)
         {
-            throw new System.NotImplementedException();
+            _redisService = redisService;
         }
 
-        public Task<Response<BasketDto>> GetBasket(string userId)
+        public async Task<Response<bool>> Delete(string userId)
         {
-            throw new System.NotImplementedException();
+            var status = await _redisService.GetDb().KeyDeleteAsync(userId);
+
+            return status ? Response<bool>.Success(204) : Response<bool>.Fail("Basket not found", 404);
         }
 
-        public Task<Response<bool>> SaveOrUpdate(BasketDto basket)
+        public async Task<Response<BasketDto>> GetBasket(string userId)
         {
-            throw new System.NotImplementedException();
+            var existBasket = await _redisService.GetDb().StringGetAsync(userId);
+
+            if(string.IsNullOrEmpty(existBasket))
+            {
+                return Response<BasketDto>.Fail("Basket not found", 404);
+            }
+
+            return Response<BasketDto>.Success(JsonSerializer.Deserialize<BasketDto>(existBasket), 200);
+        }
+
+        public async Task<Response<bool>> SaveOrUpdate(BasketDto basketdto)
+        {
+            var status = await _redisService.GetDb().StringSetAsync(basketdto.UserId, JsonSerializer.Serialize(basketdto));
+
+            return status ? Response<bool>.Success(204) : Response<bool>.Fail("Basket could not update or save", 500);
         }
     }
 }

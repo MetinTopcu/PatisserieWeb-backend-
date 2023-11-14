@@ -8,7 +8,7 @@ namespace Patisserie.Services.Basket.Services
     {
         Task<Response<BasketDto>> GetBasket(string userId);
 
-        Task<Response<bool>> SaveOrUpdate(BasketDto basket);
+        Task<Response<bool>> SaveOrUpdate(BasketDto basketdto);
 
         Task<Response<bool>> Delete(string userId);
     }
