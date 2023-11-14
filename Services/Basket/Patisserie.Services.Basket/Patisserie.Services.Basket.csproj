@@ -13,8 +13,4 @@
     <ProjectReference Include="..\..\..\Shared\Patisserie.Shared\Patisserie.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
