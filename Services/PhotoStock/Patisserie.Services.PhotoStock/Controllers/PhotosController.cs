@@ -39,8 +39,8 @@ namespace Patisserie.Services.PhotoStock.Controllers
         [HttpDelete]
         public IActionResult PhotoDelete(string photoUrl)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
-            if (System.IO.File.Exists(path))
+            var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/photos", photoUrl);
+            if (!System.IO.File.Exists(path))
             {
                 return CreateActionResultInstance(Response<NoContent>.Fail("Photo not found", 404));
             }
