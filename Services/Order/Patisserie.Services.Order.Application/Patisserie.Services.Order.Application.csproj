@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Patisserie.Shared\Patisserie.Shared.csproj" />
     <ProjectReference Include="..\Patisserie.Services.Order.Domain\Patisserie.Services.Order.Domain.csproj" />
     <ProjectReference Include="..\Patisserie.Services.Order.Infrastructure\Patisserie.Services.Order.Infrastructure.csproj" />
   </ItemGroup>
