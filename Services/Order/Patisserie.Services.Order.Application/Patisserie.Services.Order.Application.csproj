@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Patisserie.Services.Order.Domain\Patisserie.Services.Order.Domain.csproj" />
+    <ProjectReference Include="..\Patisserie.Services.Order.Infrastructure\Patisserie.Services.Order.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
