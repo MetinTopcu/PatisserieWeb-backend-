@@ -1,25 +1,21 @@
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Patisserie.Services.Order.Infrastructure;
-using Patisserie.Shared.Services;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Patisserie.Services.Order.API
+namespace Patisserie.Services.FakePayment
 {
     public class Startup
     {
@@ -33,28 +29,16 @@ namespace Patisserie.Services.Order.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub"); //sub'ý maplemeyi yapma
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.Authority = Configuration["IdentityServerURL"];
-                options.Audience = "resource_order";
+                options.Audience = "resource_payment";
                 options.RequireHttpsMetadata = false;
 
             });
-
-            services.AddDbContext<OrderDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), configure =>
-                {
-                    configure.MigrationsAssembly("Patisserie.Services.Order.Infrastructure");
-                }));
-
-            services.AddHttpContextAccessor();
-            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
-
-            services.AddMediatR(typeof(Application.Handlers.CreateOrderCommandHandler).Assembly);
 
             services.AddControllers(opt =>
             {
@@ -62,7 +46,7 @@ namespace Patisserie.Services.Order.API
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Patisserie.Services.Order.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Patisserie.Services.FakePayment", Version = "v1" });
             });
         }
 
@@ -73,7 +57,7 @@ namespace Patisserie.Services.Order.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patisserie.Services.Order.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patisserie.Services.FakePayment v1"));
             }
 
             app.UseRouting();
