@@ -18,6 +18,7 @@ namespace Patisserie.Services.Order.Domain.OrderAggregate
         public Decimal Price { get;private set; }
         public int Quantity { get; private set; }
 
+        public OrderItem() { }
         public OrderItem(string productId, string productName, string pictureUrl, decimal price, int quantity)
         {
             ProductId = productId;
