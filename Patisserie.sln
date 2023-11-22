@@ -36,15 +36,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Discoun
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{9FAF7A5B-F212-440C-98C7-D8D7DFA61E44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.Order.API", "Services\Order\Patisserie.Services.Order.API\Patisserie.Services.Order.API.csproj", "{6CB3CF77-24AD-4536-8830-4A5138989507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Order.API", "Services\Order\Patisserie.Services.Order.API\Patisserie.Services.Order.API.csproj", "{6CB3CF77-24AD-4536-8830-4A5138989507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.Order.Application", "Services\Order\Patisserie.Services.Order.Application\Patisserie.Services.Order.Application.csproj", "{EB677D27-4F61-43E5-9057-76C8B8833C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Order.Application", "Services\Order\Patisserie.Services.Order.Application\Patisserie.Services.Order.Application.csproj", "{EB677D27-4F61-43E5-9057-76C8B8833C5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.Order.Domain", "Services\Order\Patisserie.Services.Order.Domain\Patisserie.Services.Order.Domain.csproj", "{F0E171AB-D23E-48EF-93F3-ACF7D06296C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Order.Domain", "Services\Order\Patisserie.Services.Order.Domain\Patisserie.Services.Order.Domain.csproj", "{F0E171AB-D23E-48EF-93F3-ACF7D06296C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.Order.Domain.Core", "Services\Order\Patisserie.Services.Order.Domain.Core\Patisserie.Services.Order.Domain.Core.csproj", "{A0CEED1D-6DD1-4D2D-86A9-B6A91CD1F897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Order.Domain.Core", "Services\Order\Patisserie.Services.Order.Domain.Core\Patisserie.Services.Order.Domain.Core.csproj", "{A0CEED1D-6DD1-4D2D-86A9-B6A91CD1F897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.Order.Infrastructure", "Services\Order\Patisserie.Services.Order.Infrastructure\Patisserie.Services.Order.Infrastructure.csproj", "{6254D9B9-9CEE-45FE-9DAD-3C9230741C95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patisserie.Services.Order.Infrastructure", "Services\Order\Patisserie.Services.Order.Infrastructure\Patisserie.Services.Order.Infrastructure.csproj", "{6254D9B9-9CEE-45FE-9DAD-3C9230741C95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakePayment", "FakePayment", "{A9C8AA52-A471-4209-B65F-C08A000B0E5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Services.FakePayment", "Services\FakePayment\Patisserie.Services.FakePayment\Patisserie.Services.FakePayment.csproj", "{995FBDCC-17C7-4BB7-BF5F-0E5B54535068}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{AFC00A80-42C9-4516-91A3-04508AE378D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patisserie.Gateway", "Gateways\Patisserie.Gateway\Patisserie.Gateway.csproj", "{F89D5878-A1D9-493B-9DAD-478D681384CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +104,14 @@ Global
 		{6254D9B9-9CEE-45FE-9DAD-3C9230741C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6254D9B9-9CEE-45FE-9DAD-3C9230741C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6254D9B9-9CEE-45FE-9DAD-3C9230741C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{995FBDCC-17C7-4BB7-BF5F-0E5B54535068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995FBDCC-17C7-4BB7-BF5F-0E5B54535068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995FBDCC-17C7-4BB7-BF5F-0E5B54535068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995FBDCC-17C7-4BB7-BF5F-0E5B54535068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89D5878-A1D9-493B-9DAD-478D681384CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89D5878-A1D9-493B-9DAD-478D681384CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89D5878-A1D9-493B-9DAD-478D681384CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89D5878-A1D9-493B-9DAD-478D681384CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +133,9 @@ Global
 		{F0E171AB-D23E-48EF-93F3-ACF7D06296C8} = {9FAF7A5B-F212-440C-98C7-D8D7DFA61E44}
 		{A0CEED1D-6DD1-4D2D-86A9-B6A91CD1F897} = {9FAF7A5B-F212-440C-98C7-D8D7DFA61E44}
 		{6254D9B9-9CEE-45FE-9DAD-3C9230741C95} = {9FAF7A5B-F212-440C-98C7-D8D7DFA61E44}
+		{A9C8AA52-A471-4209-B65F-C08A000B0E5D} = {84FF4179-E5BA-4F04-931B-FB9652359C18}
+		{995FBDCC-17C7-4BB7-BF5F-0E5B54535068} = {A9C8AA52-A471-4209-B65F-C08A000B0E5D}
+		{F89D5878-A1D9-493B-9DAD-478D681384CA} = {AFC00A80-42C9-4516-91A3-04508AE378D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {596E87C4-5A33-41A8-BAE7-2F3B01A5758C}
